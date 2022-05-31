@@ -10,5 +10,13 @@
     <h1>Characters of Earth Nation</h1>
     <a href="/">Home</a>
     <a href="/earth/new">Add Character</a>
+    <div class="earthList">
+        <% for(let i = 0; i < earthlings.length; i++){ %>
+            <div class="earthLoopElements"
+                <h3><%= earthlings[i].name %></h3>
+                <a href="/earth/<%= earthlings[i]._id; %>"><img src="<%= earthlings[i].indexImg %>"></a><br/>
+            </div>
+        <% } %>
+        </div>
 </body>
 </html>

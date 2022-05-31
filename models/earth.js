@@ -1,12 +1,15 @@
 const mongoose = require("mongoose")
 
+
 const earthSchema = new mongoose.Schema({
-    img: String,
-    name: {type: String, required: true},
-    age: {type: Number, required: true},
+    indexImg: String,
+    showImg: String,
+    indexName: {type: String, required: true},
+    fullName: {type: String},
+    age: {type: String, required: true},
     interestingFact: {type: String, required: true}
 })
 
-const earthDataBlueprint= mongoose.model("earth", earthSchema)
+const Earths= mongoose.model("Earths", earthSchema)
 
-module.exports = earthDataBlueprint;
+module.exports = Earths;

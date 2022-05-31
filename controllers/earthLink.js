@@ -1,6 +1,6 @@
 //require dependencies
 const express = require("express")
-const earthDataBlueprint = require("../models/earth.js")
+const Earths = require("../models/earth.js")
 
 const router = express.Router()
 
@@ -14,9 +14,11 @@ const router = express.Router()
 
 //Earth Index page of characters
 router.get("/", (req, res) => {
-    ///earthDataBlueprint.find({}, (error, allEarths) => {
-    res.render("earth/index.ejs")//, {earth: allEarths,})
-    //})
+    Earths.find({}, (error, allEarthlings) => {
+    res.render("earth/index.ejs", {
+        earthlings: allEarthlings,
+        })
+    })
 })
 
 //Route to add New character
@@ -54,15 +56,15 @@ router.post('/', (req, res) => {
 
 //Route to Edit Page
 router.get("/:id/edit", (req, res) => {
-    earthDataBlueprint.findById(req.params.id, (error, foundEarthling) => {
-        res.send("route to edit page is working") //res.render("edit.ejs", {earth: foundEarthling})
+    Earths.findById(req.params.id, (error, foundEarthling) => {
+        res.send("route to edit page is working") //res.render("earth/edit.ejs", {earth: foundEarthling})
     })
 })
 
 //Route to Indv. Show Pages
 router.get("/:id", (req, res) => {
-    earthDataBlueprint.findById(req.params.id, (err, foundEarthling) => {
-        res.send("route to show pg. is working") //res.render("show.ejs", {earth: foundEarthling})
+    Earths.findById(req.params.id, (err, foundEarthling) => {
+        res.render("earth/show.ejs", {earthling: foundEarthling})
     })
 })
 
