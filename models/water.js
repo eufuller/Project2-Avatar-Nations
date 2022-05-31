@@ -9,6 +9,6 @@ const waterSchema = new mongoose.Schema({
     interestingFact: {type: String, required: true}
 })
 
-const water= mongoose.model("water", waterSchema)
+const Water= mongoose.model("water", waterSchema)
 
-module.exports = water;
+module.exports = Water;

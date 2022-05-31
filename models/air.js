@@ -9,6 +9,6 @@ const airSchema = new mongoose.Schema({
     interestingFact: {type: String, required: true}
 })
 
-const air= mongoose.model("air", airSchema)
+const Air= mongoose.model("air", airSchema)
 
-module.exports = air;
+module.exports = Air;

@@ -7,14 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Characters of Earth Nation</h1>
+    <h1>Characters of Fire Nation</h1>
     <a href="/">Home</a>
-    <a href="/earth/new">Add Character</a>
-    <div class="earthList">
-        <% for(let i = 0; i < earthlings.length; i++){ %>
-            <div class="earthLoopElements"
-                <h3><%= earthlings[i].name %></h3>
-                <a href="/earth/<%= earthlings[i]._id; %>"><img src="<%= earthlings[i].indexImg %>"></a><br/>
+    <a href="/fire/new">Add Character</a>
+    <div class="fireList">
+        <% for(let i = 0; i < firelings.length; i++){ %>
+            <div class="fireLoopElements"
+                <h3><%= firelings[i].name %></h3>
+                <a href="/fire/<%= firelings[i]._id; %>"><img src="<%= firelings[i].indexImg %>"></a><br/>
             </div>
         <% } %>
         </div>

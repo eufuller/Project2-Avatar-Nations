@@ -1,39 +1,39 @@
 //require dependencies
 const express = require("express")
-const fireDataBlueprint = require("../models/fire.js")
+const Fire = require("../models/fire.js")
 
 const router = express.Router()
 
 //Routes
 // router.get("/fire", (req, res) => {
-//     fireDataBlueprint.deleteMany({}, (error, allfires) => {})
-//     //fireDataBlueprint.create(AvatarSeed, (error, data) => {
+//     Fire.deleteMany({}, (error, allfires) => {})
+//     //Fire.create(AvatarSeed, (error, data) => {
 //         res.redirect("/fire")
 //     })
 // })
 
 //fire Index page of characters
 router.get("/", (req, res) => {
-    ///fireDataBlueprint.find({}, (error, allfires) => {
-    res.render("fire/index.ejs")//, {firelings: allfires,})
-    //})
+    Fire.find({}, (error, allfires) => {
+    res.render("fire/index.ejs", {firelings: allfires,})
+    })
 })
 
 //Route to add New character
 router.get("/new", (req, res) => {
-    res.send("create new route is working") //res.render("fire/new.ejs")
+    res.render("fire/new.ejs")
 })
 
 //Destroy/Delete
 router.delete("/:id", (req, res) => {
-    fireDataBlueprint.findByIdAndRemove(req.params.id, (err, data) => {
+    Fire.findByIdAndRemove(req.params.id, (err, data) => {
         res.redirect("/fire")
     })
 })
 
 //Update functionality for Edit page
 router.put("/:id", (req, res) => {
-    fireDataBlueprint.findByIdAndUpdate(
+    Fire.findByIdAndUpdate(
         req.params.id,
         req.body,
         {
@@ -47,22 +47,22 @@ router.put("/:id", (req, res) => {
 
 //Create functionality for New page
 router.post('/', (req, res) => {
-    fireDataBlueprint.create(req.body, (error, createdfireling) => {
+    Fire.create(req.body, (error, createdfireling) => {
         res.redirect("/fire")
     })
 })
 
 //Route to Edit Page
 router.get("/:id/edit", (req, res) => {
-    fireDataBlueprint.findById(req.params.id, (error, foundfireling) => {
-        res.send("route to edit page is working") //res.render("fire/edit.ejs", {fireling: foundfireling})
+    Fire.findById(req.params.id, (error, foundfireling) => {
+        res.render("fire/edit.ejs", {fireling: foundfireling})
     })
 })
 
 //Route to Indv. Show Pages
 router.get("/:id", (req, res) => {
-    fireDataBlueprint.findById(req.params.id, (err, foundfireling) => {
-        res.send("route to show pg. is working") //res.render("fire/show.ejs", {fireling: foundfireling})
+    Fire.findById(req.params.id, (err, foundfireling) => {
+        res.render("fire/show.ejs", {fireling: foundfireling})
     })
 })
 

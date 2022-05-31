@@ -6,8 +6,8 @@ const router = express.Router()
 
 //Routes
 // router.get("/earth", (req, res) => {
-//     earthDataBlueprint.deleteMany({}, (error, allEarths) => {})
-//     //earthDataBlueprint.create(AvatarSeed, (error, data) => {
+//     Earths.deleteMany({}, (error, allEarths) => {})
+//     //Earths.create(AvatarSeed, (error, data) => {
 //         res.redirect("/earth")
 //     })
 // })
@@ -28,14 +28,14 @@ router.get("/new", (req, res) => {
 
 //Destroy/Delete
 router.delete("/:id", (req, res) => {
-    earthDataBlueprint.findByIdAndRemove(req.params.id, (err, data) => {
+    Earths.findByIdAndRemove(req.params.id, (err, data) => {
         res.redirect("/earth")
     })
 })
 
 //Update functionality for Edit page
 router.put("/:id", (req, res) => {
-    earthDataBlueprint.findByIdAndUpdate(
+    Earths.findByIdAndUpdate(
         req.params.id,
         req.body,
         {
@@ -49,7 +49,7 @@ router.put("/:id", (req, res) => {
 
 //Create functionality for New page
 router.post('/', (req, res) => {
-    earthDataBlueprint.create(req.body, (error, createdEarthling) => {
+    Earths.create(req.body, (error, createdEarthling) => {
         res.redirect("/earth")
     })
 })
