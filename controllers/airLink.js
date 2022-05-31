@@ -15,7 +15,7 @@ const router = express.Router()
 //air Index page of characters
 router.get("/", (req, res) => {
     ///airDataBlueprint.find({}, (error, allairs) => {
-    res.render("air/index.ejs")//, {air: allairs,})
+    res.render("air/index.ejs")//, {nomads: allairs,})
     //})
 })
 
@@ -55,14 +55,14 @@ router.post('/', (req, res) => {
 //Route to Edit Page
 router.get("/:id/edit", (req, res) => {
     airDataBlueprint.findById(req.params.id, (error, foundairling) => {
-        res.send("route to edit page is working") //res.render("edit.ejs", {air: foundairling})
+        res.send("route to edit page is working") //res.render("air/edit.ejs", {nomad: foundairling})
     })
 })
 
 //Route to Indv. Show Pages
 router.get("/:id", (req, res) => {
     airDataBlueprint.findById(req.params.id, (err, foundairling) => {
-        res.send("route to show pg. is working") //res.render("show.ejs", {air: foundairling})
+        res.send("route to show pg. is working") //res.render("air/show.ejs", {nomad: foundairling})
     })
 })
 

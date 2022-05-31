@@ -15,7 +15,7 @@ const router = express.Router()
 //fire Index page of characters
 router.get("/", (req, res) => {
     ///fireDataBlueprint.find({}, (error, allfires) => {
-    res.render("fire/index.ejs")//, {fire: allfires,})
+    res.render("fire/index.ejs")//, {firelings: allfires,})
     //})
 })
 
@@ -55,14 +55,14 @@ router.post('/', (req, res) => {
 //Route to Edit Page
 router.get("/:id/edit", (req, res) => {
     fireDataBlueprint.findById(req.params.id, (error, foundfireling) => {
-        res.send("route to edit page is working") //res.render("edit.ejs", {fire: foundfireling})
+        res.send("route to edit page is working") //res.render("fire/edit.ejs", {fireling: foundfireling})
     })
 })
 
 //Route to Indv. Show Pages
 router.get("/:id", (req, res) => {
     fireDataBlueprint.findById(req.params.id, (err, foundfireling) => {
-        res.send("route to show pg. is working") //res.render("show.ejs", {fire: foundfireling})
+        res.send("route to show pg. is working") //res.render("fire/show.ejs", {fireling: foundfireling})
     })
 })
 

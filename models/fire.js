@@ -9,6 +9,6 @@ const fireSchema = new mongoose.Schema({
     interestingFact: {type: String, required: true}
 })
 
-const fireDataBlueprint= mongoose.model("fire", fireSchema)
+const fire= mongoose.model("fire", fireSchema)
 
-module.exports = fireDataBlueprint;
+module.exports = fire;

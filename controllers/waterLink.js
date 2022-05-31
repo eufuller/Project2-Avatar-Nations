@@ -15,7 +15,7 @@ const router = express.Router()
 //water Index page of characters
 router.get("/", (req, res) => {
     ///waterDataBlueprint.find({}, (error, allwaters) => {
-    res.render("water/index.ejs")//, {water: allwaters,})
+    res.render("water/index.ejs", {waterlings: allwaters,})
     //})
 })
 
@@ -55,14 +55,14 @@ router.post('/', (req, res) => {
 //Route to Edit Page
 router.get("/:id/edit", (req, res) => {
     waterDataBlueprint.findById(req.params.id, (error, foundwaterling) => {
-        res.send("route to edit page is working") //res.render("edit.ejs", {water: foundwaterling})
+        res.send("route to edit page is working") //res.render("water/edit.ejs", {waterling: foundwaterling})
     })
 })
 
 //Route to Indv. Show Pages
 router.get("/:id", (req, res) => {
     waterDataBlueprint.findById(req.params.id, (err, foundwaterling) => {
-        res.send("route to show pg. is working") //res.render("show.ejs", {water: foundwaterling})
+        res.send("route to show pg. is working") //res.render("show.ejs", {waterling: foundwaterling})
     })
 })
 

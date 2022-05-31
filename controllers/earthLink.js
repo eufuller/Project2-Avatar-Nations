@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
 
 //Route to add New character
 router.get("/new", (req, res) => {
-    res.send("create new route is working") //res.render("earth/new.ejs")
+    res.render("earth/new.ejs")
 })
 
 //Destroy/Delete

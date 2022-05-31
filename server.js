@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
 
 //controllers-really just more middleware
 app.use("/earth", earthController)
-// app.use("/water", waterController)
-// app.use("/fire", fireController)
-// app.use("/air", airController)
+app.use("/water", waterController)
+app.use("/fire", fireController)
+app.use("/air", airController)
 
 //listeners
 app.listen(3000, () => {
