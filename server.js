@@ -4,9 +4,9 @@ require("dotenv").config()
 const mongoose = require("mongoose")
 const methodOverride = require("method-override")
 const earthController = require("./controllers/earthLink")
-// const waterController = require("./controllers/waterLink")
-// const airController = require("./controllers/airLink")
-// const fireController = require("./controllers/fireLink")
+const waterController = require("./controllers/waterLink")
+const airController = require("./controllers/airLink")
+const fireController = require("./controllers/fireLink")
 
 
 //Database Connection

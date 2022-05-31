@@ -1,12 +1,12 @@
 const mongoose = require("mongoose")
 
-const avatarSchema = new mongoose.Schema({
+const airSchema = new mongoose.Schema({
     img: String,
     name: {type: String, required: true},
     age: {type: Number, required: true},
     interestingFact: {type: String, required: true}
 })
 
-const Avatar= mongoose.model("Avatar", avatarSchema)
+const airDataBlueprint= mongoose.model("air", airSchema)
 
-module.exports = Avatar;
+module.exports = airDataBlueprint;
