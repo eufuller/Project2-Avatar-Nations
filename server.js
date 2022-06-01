@@ -37,6 +37,6 @@ app.use("/fire", fireController)
 app.use("/air", airController)
 
 //listeners
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log("All sailors, welcome to port")
 })

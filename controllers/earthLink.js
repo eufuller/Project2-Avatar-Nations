@@ -28,23 +28,16 @@ router.get("/new", (req, res) => {
 
 //Destroy/Delete
 router.delete("/:id", (req, res) => {
-    Earths.findByIdAndRemove(req.params.id, (err, data) => {
+    Earths.findByIdAndRemove(req.params.id, () => {
         res.redirect("/earth")
     })
 })
 
 //Update functionality for Edit page
-router.put("/:id", (req, res) => {
-    Earths.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-            new: true,
-        },
-        (error, updatedEarth) => {
-            res.redirect(`/earth/${req.params.id}`)
-        }
-    )
+router.put('/:id', (req, res) => {
+    Earths.findByIdAndUpdate(req.params.id, req.body, (error, updatedEarthling) =>{
+        res.redirect(`/earth/${req.params.id}`)
+    })
 })
 
 //Create functionality for New page
@@ -57,7 +50,7 @@ router.post('/', (req, res) => {
 //Route to Edit Page
 router.get("/:id/edit", (req, res) => {
     Earths.findById(req.params.id, (error, foundEarthling) => {
-        res.send("route to edit page is working") //res.render("earth/edit.ejs", {earth: foundEarthling})
+        res.render("earth/edit.ejs", {earth: foundEarthling})
     })
 })
 
