@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 const waterSchema = new mongoose.Schema({
-    indexImg: String,
+    indexImg: {type: String, required: true},
     showImg: String,
     indexName: {type: String, required: true},
     fullName: {type: String},

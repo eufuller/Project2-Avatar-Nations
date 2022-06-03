@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>About: <%= nomad.indexName %></h1></br>
+<%- include('../partials/head.ejs')%>
+
+<body class="air-show-forms-background">
+    <h1>About: <%= nomad.indexName %></h1><br/>
     <img src ="<%= nomad.showImg %>"/><br/>
-    <a href="/air/<%= nomad._id %>/edit">Edit</a>
-    <a href="/air/<% nomad._id; %>">Delete</a></br>
-    Full Known Name: <%= nomad.fullName %><br/>
-    Last Known Age: <%= nomad.age %><br/>
-    Interesting Fact about <%= nomad.indexName %>:<br/> <%= nomad.interestingFact %></br>
-    <a href="/earth">Back</a>
+
+    <form class="delete" action="/air/<% nomad._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete"/> 
+    </form>
+
+    <div class="show-content">
+        <p>
+            Full Known Name: <%= nomad.fullName %><br/>
+            Age in ATLA: <%= nomad.age %><br/>
+            Interesting Fact about <%= nomad.indexName %>:<br/> <%= nomad.interestingFact %></br>
+        </p>
+        <a href="/air/<%= nomad._id %>/edit">Edit</a>
+        <a href="/air">Back</a>
+    </div>
 
 </body>
 </html>

@@ -4,14 +4,6 @@ const Earths = require("../models/earth.js")
 
 const router = express.Router()
 
-//Routes
-// router.get("/earth", (req, res) => {
-//     Earths.deleteMany({}, (error, allEarths) => {})
-//     //Earths.create(AvatarSeed, (error, data) => {
-//         res.redirect("/earth")
-//     })
-// })
-
 //Earth Index page of characters
 router.get("/", (req, res) => {
     Earths.find({}, (error, allEarthlings) => {

@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <%- include('../partials/head.ejs')%>
+
+  <body class="earth-index-background">
     <h1>Characters of Earth Nation</h1>
     <a href="/">Home</a>
     <a href="/earth/new">Add Character</a>
-    <div class="earthList">
-        <% for(let i = 0; i < earthlings.length; i++){ %>
-            <div class="earthLoopElements"
-                <h3><%= earthlings[i].name %></h3>
-                <a href="/earth/<%= earthlings[i]._id; %>"><img src="<%= earthlings[i].indexImg %>"></a><br/>
-            </div>
-        <% } %>
-        </div>
-</body>
+    <div class="index-container" id="images">
+      <% for(let i = 0; i < earthlings.length; i++){ %>
+      <div class="loop-elements">
+        <h2><%= earthlings[i].indexName %></h2>
+        <a href="/earth/<%= earthlings[i]._id; %>"
+          ><img src="<%= earthlings[i].indexImg %>" alt="More Info" /></a
+        ><br />
+      </div>
+      <% } %>
+    </div>
+  </body>
 </html>

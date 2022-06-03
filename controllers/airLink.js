@@ -4,13 +4,6 @@ const Air = require("../models/air.js")
 
 const router = express.Router()
 
-//Routes
-// router.get("/air", (req, res) => {
-//     Air.deleteMany({}, (error, allAir) => {})
-//     //Air.create(AvatarSeed, (error, data) => {
-//         res.redirect("/air")
-//     })
-// })
 
 //air Index page of characters
 router.get("/", (req, res) => {
@@ -28,23 +21,16 @@ router.get("/new", (req, res) => {
 
 //Destroy/Delete
 router.delete("/:id", (req, res) => {
-    Air.findByIdAndRemove(req.params.id, (err, data) => {
+    Air.findByIdAndRemove(req.params.id, () => {
         res.redirect("/air")
     })
 })
 
 //Update functionality for Edit page
 router.put("/:id", (req, res) => {
-    Air.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-            new: true,
-        },
-        (error, updatedair) => {
+    Air.findByIdAndUpdate(req.params.id, req.body, (err, updatedNomad) => {
             res.redirect(`/air/${req.params.id}`)
-        }
-    )
+        })
 })
 
 //Create functionality for New page

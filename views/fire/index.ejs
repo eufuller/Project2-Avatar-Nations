@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <%- include('../partials/head.ejs')%>
+
+  <body class="fire-index-background">
     <h1>Characters of Fire Nation</h1>
     <a href="/">Home</a>
     <a href="/fire/new">Add Character</a>
-    <div class="fireList">
-        <% for(let i = 0; i < firelings.length; i++){ %>
-            <div class="fireLoopElements"
-                <h3><%= firelings[i].name %></h3>
-                <a href="/fire/<%= firelings[i]._id; %>"><img src="<%= firelings[i].indexImg %>"></a><br/>
-            </div>
-        <% } %>
-        </div>
-</body>
+    <div class="index-container">
+      <% for(let i = 0; i < firelings.length; i++){ %>
+      <div class="loop-elements" id="images">
+        <h2><%= firelings[i].indexName %></h2>
+        <a href="/fire/<%= firelings[i]._id; %>">
+          <img src="<%= firelings[i].indexImg %>" alt="More Info"></a>
+      </div>
+      <% } %>
+    </div>
+  </body>
 </html>

@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 
 const earthSchema = new mongoose.Schema({
-    indexImg: String,
+    indexImg: {type: String, required: true},
     showImg: String,
     indexName: {type: String, required: true},
     fullName: {type: String},

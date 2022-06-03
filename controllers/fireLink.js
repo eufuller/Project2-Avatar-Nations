@@ -4,13 +4,6 @@ const Fire = require("../models/fire.js")
 
 const router = express.Router()
 
-//Routes
-// router.get("/fire", (req, res) => {
-//     Fire.deleteMany({}, (error, allfires) => {})
-//     //Fire.create(AvatarSeed, (error, data) => {
-//         res.redirect("/fire")
-//     })
-// })
 
 //fire Index page of characters
 router.get("/", (req, res) => {
@@ -26,23 +19,16 @@ router.get("/new", (req, res) => {
 
 //Destroy/Delete
 router.delete("/:id", (req, res) => {
-    Fire.findByIdAndRemove(req.params.id, (err, data) => {
+    Fire.findByIdAndRemove(req.params.id, () => {
         res.redirect("/fire")
     })
 })
 
 //Update functionality for Edit page
 router.put("/:id", (req, res) => {
-    Fire.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {
-            new: true,
-        },
-        (error, updatedfire) => {
+    Fire.findByIdAndUpdate(req.params.id, req.body, (err, updatedfireling) => {
             res.redirect(`/fire/${req.params.id}`)
-        }
-    )
+        })
 })
 
 //Create functionality for New page

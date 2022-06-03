@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-  
-<body>
+  <%- include('../partials/head.ejs')%>
+
+  <body class="air-show-forms-background">
     <h1>Add New Character</h1>
     <form action="/air" method="POST">
-        Nickname: <input type="text" name="indexName" /> <br/>
-        Full Name: <input type="text" name="fullName" /> <br/>
-        Age: <input type="text" name="age" /> <br/>
-        Interesting Fact: <input type="text" name="interestingFact" /> <br/>
-        Gallery Photo: <input type="text" name="indexImg" /> <br/>
-        Profile Photo: <input type="text" name="showImg" /> <br/>
-        <input type="submit" name="" value="Submit" />
+      Nickname: <input type="text" name="indexName" /> <br />
+      Full Name: <input type="text" name="fullName" /> <br />
+      Age: <input type="text" name="age" /> <br />
+      Interesting Fact: <input type="text" name="interestingFact" /> <br />
+      Gallery Photo: <input type="text" name="indexImg" /> <br />
+      Profile Photo: <input type="text" name="showImg" /> <br />
+      <input class="submit" type="submit" name="" value="Submit" />
     </form>
-</body>
+  </body>
 </html>

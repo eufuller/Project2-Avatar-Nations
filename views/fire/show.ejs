@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>About: <%= fireling.indexName %></h1></br>
-    <img src ="<%= fireling.showImg %>"/><br/>
-    <a href="/earth/<%= fireling._id %>/edit">Edit</a>
-    <a href="/earth/<% fireling._id; %>">Delete</a></br>
-    Full Known Name: <%= fireling.fullName %><br/>
-    Last Known Age: <%= fireling.age %><br/>
-    Interesting Fact about <%= fireling.indexName %>:<br/> <%= fireling.interestingFact %></br>
-    <a href="/earth">Back</a>
+<%- include('../partials/head.ejs')%>
 
+<body class="fire-show-forms-background">
+    <h1>About: <%= fireling.indexName %></h1><br/>
+    <img src="<%= fireling.showImg %>"/><br/>
+    
+    <form class="delete" action="/fire/<% fireling._id %>?_method=DELETE" method="POST">
+        <input type="submit" value="Delete"/> 
+    </form>
+
+    <div class="show-content">
+        <p>
+            Full Known Name: <%= fireling.fullName %><br/>
+            Age in ATLA: <%= fireling.age %><br/>
+            Interesting Fact about <%= fireling.indexName %>:<br/> <%= fireling.interestingFact %></br>
+        </p>
+        <a href="/fire/<%= fireling._id %>/edit">Edit</a>
+        <a href="/fire">Back</a>
+</div>
 </body>
+
+
 </html>
