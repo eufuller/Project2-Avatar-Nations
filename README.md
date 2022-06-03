@@ -10,6 +10,7 @@
   <li>Heroku</li>
   <li>MongoDB & Mongo</li>
   <li>EJS and partials</li> 
+  <li>Node.js</li>
   <li>Express</li>
   <li>CSS Flexbox and Grid</li>
 
@@ -18,7 +19,7 @@
 <img src="https://i.imgur.com/PJLvzDR.png">
 
 <ol><h2>Site Link</h2></ol>
- <li>https://avatar-atla-community.herokuapp.com/</li>
+ <li>View deployed app here: https://avatar-atla-community.herokuapp.com/</li>
  
 
 <h2>Future Enhancements:</h2>
