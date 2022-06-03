@@ -171,6 +171,7 @@ a {
 
 .show-content {
     box-sizing:border-box;
+    width: 600px;
     background: burlywood;
     opacity: 0.7;
     position: fixed;
@@ -183,22 +184,22 @@ a {
 /*Show pg. image formatting*/
 
 .air-show-forms-background img{
-    width: 500px;
+    width: 600px;
      height: 400px;
      margin: 0% 36% 0;
 }
 .earth-show-forms-background img{
-    width: 500px;
+    width: 600px;
      height: 400px;
      margin: 0% 36% 0;
 }
 .fire-show-forms-background img{
-    width: 500px;
+    width: 600px;
      height: 400px;
      margin: 0% 36% 0;
 }
 .water-show-forms-background img{
-    width: 550px;
+    width: 600px;
     height: 400px;
     margin: 0% 36% 0;
 }
