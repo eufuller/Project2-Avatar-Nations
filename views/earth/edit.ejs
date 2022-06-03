@@ -3,6 +3,7 @@
   <%- include('../partials/head.ejs')%>
 
   <body class="earth-show-forms-background">
+    <div class="forms">
     <h1>Edit Character Info</h1>
     <form action="/earth/<%= earth._id %>?_method=PUT" method="POST">
       Nickname: <input type="text" name="indexName" /> <br />
@@ -12,6 +13,7 @@
       Gallery Photo: <input type="text" name="indexImg" /> <br />
       Profile Photo: <input type="text" name="showImg" /> <br />
       <input class="submit" type="submit" name="" value="Update" />
-    </form>
+      </form>
+      </div>
   </body>
 </html>

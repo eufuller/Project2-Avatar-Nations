@@ -3,6 +3,7 @@
   <%- include('../partials/head.ejs')%>
 
   <body class="fire-show-forms-background">
+    <div class="forms">
     <h1>Edit Character Info</h1>
     <form action="/fire/<%= fireling._id %>?_method=PUT" method="POST">
       Nickname: <input type="text" name="indexName" /> <br />
@@ -13,5 +14,6 @@
       Profile Photo: <input type="text" name="showImg" /> <br />
       <input class="submit" type="submit" name="" value="Update" />
     </form>
+    </div>
   </body>
 </html>
