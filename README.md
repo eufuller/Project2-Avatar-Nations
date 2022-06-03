@@ -9,7 +9,8 @@
   <li>Javascript</li>
   <li>Heroku</li>
   <li>MongoDB & Mongo</li>
-  <li>ejs and partials</li> 
+  <li>EJS and partials</li> 
+  <li>Express</li>
   <li>CSS Flexbox and Grid</li>
 
 <h2>Inside Look</h2>
