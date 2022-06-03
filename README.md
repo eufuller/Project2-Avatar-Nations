@@ -14,8 +14,8 @@
   <li>CSS Flexbox and Grid</li>
 
 <h2>Inside Look</h2>
-<img src="https://imgur.com/PJLvzDR">
-<img src="https://imgur.com/sfDn4u6">
+<img src="https://i.imgur.com/sfDn4u6.jpg">
+<img src="https://i.imgur.com/PJLvzDR.png">
 
 <ol><h2>Site Link</h2></ol>
  <li>https://avatar-atla-community.herokuapp.com/</li>
